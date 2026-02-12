@@ -41,7 +41,7 @@ export default function Home() {
 
         <ul className={styles.transactionsContainer}>
           {searchTextInput && filteredTransactionsResults.length === 0 ? <p>No results found</p> : filteredTransactionsResults.map((transaction) =>  (
-            <Transaction key={transaction.ref} amount={transaction.amount} cardNumber={transaction.cardNumber} cardType={transaction.cardType} />
+            <Transaction key={transaction.ref} transaction={transaction} />
           ))}
         </ul>
       </main>

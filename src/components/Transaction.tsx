@@ -2,16 +2,24 @@ import styles from "../styles/Home.module.css"
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa6";
 
-interface TransactionProps {
-cardNumber: string;
-cardType: string;
-amount: {
-    currencyCode: string;
-    value: number
-}
+interface Amount {
+  currencyCode: string;
+  value: number;
 }
 
-export default function Transaction({ cardNumber, cardType, amount}: TransactionProps){
+interface TransactionModel {
+  ref: string;
+  cardNumber: string;
+  cardType: string;
+  amount: Amount;
+}
+
+interface TransactionProps {
+  transaction: TransactionModel;
+}
+
+export default function Transaction({ transaction }: TransactionProps){
+    const { cardNumber, cardType, amount } = transaction
     return ( 
         <li className={styles.transaction}>
               <div className={styles.transactionCardDetails}>
