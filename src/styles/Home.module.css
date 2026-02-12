@@ -11,3 +11,89 @@
   gap: 32px;
   grid-row-start: 2;
 }
+
+.container {
+  padding: 12px;
+}
+
+.heading{
+  font-weight: 500;
+}
+
+.transactionsContainer{
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 18px 12px;
+  border-radius: 10px;
+}
+
+.transaction:hover{
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.transactionCardDetails, .transactionAmount{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 500;
+  margin: 0 2px;
+}
+
+.searchBar{
+  position: relative;
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+.searchBarIcon{
+  position: absolute;
+  left: 6px;
+}
+
+.searchInputField{
+  padding: 12px 36px; 
+  height: 48px;
+  width: 100%;
+  border-radius: 10px;
+  border: 0.5px black solid;
+  font-size: 16px; 
+}
+
+
+@media (min-width: 768px) {
+  .transactionsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: unset;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .transaction {
+    background: white;
+    padding: 36px 12px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .transactionsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .searchInputField {
+    width: 40%;
+  }
+}
